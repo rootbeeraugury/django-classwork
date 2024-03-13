@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h1>{{ page_heading }}</h1>
+        <p>{{ page_content }}</p>
+        <p><img src="{% static 'images/twinpeaks.jpg' %}" alt="twin peaks illustration by sachin teng" style="align-content: center"></p>
+    </div>
+</div>
+
+{% endblock %}
+
