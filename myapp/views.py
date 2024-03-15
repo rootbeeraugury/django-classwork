@@ -10,7 +10,7 @@ from django.urls import reverse
 
 #class from which all class based views inherit
 class BaseView(TemplateView):
-    default_title = 'My Website'
+    default_title = 'yeehaw'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
