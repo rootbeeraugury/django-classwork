@@ -47,9 +47,17 @@
                   <li class="nav-item">
                       <a class="nav-link" href="/function/">Function</a>
                   </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/class/">Class</a>
-                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/class/">Class</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" id="load-default-data">Load</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/inventions/">Inventions</a>
+                  </li>
+
+
                 </ul>
             </div>
         </div>
@@ -75,5 +83,29 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <!-- JavaScript for the default data link -->
+  <script>
+      document.getElementById('load-default-data').addEventListener('click', function(event) {
+          event.preventDefault();
+          if (confirm('Are you sure you want to load default data? This will delete all existing data.')) {
+              fetch('/load/')  // URL to trigger the view for loading default data
+              .then(response => response.json())
+              .then(data => {
+                  if (data.status == 'success') {
+                    alert('Default data successfully loaded!');
+                  } else {
+                    alert('Failed to load default data.');
+                  }
+              })
+              .catch(error => {
+                  console.error('Error:', error);
+                  alert('Error loading default data.');
+              });
+          }
+      });
+  </script>
+
 </body>
 </html>
